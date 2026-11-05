@@ -1,1 +1,9 @@
-# devops-methods-lab5
+Я студентка ПГНИУ, ИКНТ, 3 курс, группа ИТ-13-2024, Палкина Софья.
+Здесь я разместила файлы и результаты работы лабораторной работы по предмету "Devops и администрирование (Методы и инструменты DevOps)".
+
+Логи запуска ansible:
+![Screenshot_1](Screenshot_1.png)
+![Screenshot_2](Screenshot_2.png)
+![Screenshot_3](Screenshot_3.png)
+
+Эти же логи есть в файле log.txt
