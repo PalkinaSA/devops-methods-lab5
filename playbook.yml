@@ -1,0 +1,27 @@
+- name: lab5
+  hosts: webservers
+  become: true
+
+  tasks:
+    - name: Install NMAP
+      apt:
+        name: nmap
+        state: latest
+        update_cache: True
+
+    - name: Copy nmap targets list
+      copy:
+          src: ./targets.txt
+          dest: ~/targets.txt
+          force: yes
+          mode: 0644
+
+    - name: Run nmap
+      ansible.builtin.shell: "nmap {{ item }} -p 80 -oG -"
+      loop: "{{ lookup('file', './targets.txt').splitlines() }}"
+      register: scan_results
+
+    - name: Scan results
+      ansible.builtin.debug:
+        msg: "{{ item.stdout_lines }}"
+      loop: "{{ scan_results.results }}"

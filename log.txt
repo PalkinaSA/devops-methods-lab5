@@ -1,0 +1,48 @@
+ansible-playbook -i inventory.ini playbook.yml -K --private-key=~/.ssh/clone
+BECOME password:
+
+PLAY [lab5] ******************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] *******************************************************************************************************************************************************************************************
+ok: [10.0.2.16]
+
+TASK [Install NMAP] **********************************************************************************************************************************************************************************************
+changed: [10.0.2.16]
+
+TASK [Copy nmap targets list] ************************************************************************************************************************************************************************************
+changed: [10.0.2.16]
+
+TASK [Run nmap] **************************************************************************************************************************************************************************************************
+changed: [10.0.2.16] => (item=moodle-epos.permkrai.ru)
+changed: [10.0.2.16] => (item=www.psu.ru)
+changed: [10.0.2.16] => (item=fast.com)
+
+TASK [Scan results] **********************************************************************************************************************************************************************************************
+ok: [10.0.2.16] => (item={'changed': True, 'stdout': '# Nmap 7.94SVN scan initiated Thu Nov  5 06:05:19 2026 as: nmap -p 80 -oG - moodle-epos.permkrai.ru\nHost: 212.33.224.16 (212.33.224.16.static-business.perm.ertelecom.ru)\tStatus: Up\nHost: 212.33.224.16 (212.33.224.16.static-business.perm.ertelecom.ru)\tPorts: 80/open/tcp//http///\n# Nmap done at Thu Nov  5 06:05:19 2026 -- 1 IP address (1 host up) scanned in 0.61 seconds', 'stderr': '', 'rc': 0, 'cmd': 'nmap moodle-epos.permkrai.ru -p 80 -oG -', 'start': '2026-11-05 06:05:18.973983', 'end': '2026-11-05 06:05:19.682813', 'delta': '0:00:00.708830', 'msg': '', 'invocation': {'module_args': {'_raw_params': 'nmap moodle-epos.permkrai.ru -p 80 -oG -', '_uses_shell': True, 'expand_argument_vars': True, 'stdin_add_newline': True, 'strip_empty_ends': True, 'argv': None, 'chdir': None, 'executable': None, 'creates': None, 'removes': None, 'stdin': None}}, 'stdout_lines': ['# Nmap 7.94SVN scan initiated Thu Nov  5 06:05:19 2026 as: nmap -p 80 -oG - moodle-epos.permkrai.ru', 'Host: 212.33.224.16 (212.33.224.16.static-business.perm.ertelecom.ru)\tStatus: Up', 'Host: 212.33.224.16 (212.33.224.16.static-business.perm.ertelecom.ru)\tPorts: 80/open/tcp//http///', '# Nmap done at Thu Nov  5 06:05:19 2026 -- 1 IP address (1 host up) scanned in 0.61 seconds'], 'stderr_lines': [], 'failed': False, 'item': 'moodle-epos.permkrai.ru', 'ansible_loop_var': 'item'}) => {
+    "msg": [
+        "# Nmap 7.94SVN scan initiated Thu Nov  5 06:05:19 2026 as: nmap -p 80 -oG - moodle-epos.permkrai.ru",
+        "Host: 212.33.224.16 (212.33.224.16.static-business.perm.ertelecom.ru)\tStatus: Up",
+        "Host: 212.33.224.16 (212.33.224.16.static-business.perm.ertelecom.ru)\tPorts: 80/open/tcp//http///",
+        "# Nmap done at Thu Nov  5 06:05:19 2026 -- 1 IP address (1 host up) scanned in 0.61 seconds"
+    ]
+}
+ok: [10.0.2.16] => (item={'changed': True, 'stdout': '# Nmap 7.94SVN scan initiated Thu Nov  5 06:05:21 2026 as: nmap -p 80 -oG - www.psu.ru\nHost: 46.146.231.187 (lemonbro.ru)\tStatus: Up\nHost: 46.146.231.187 (lemonbro.ru)\tPorts: 80/open/tcp//http///\n# Nmap done at Thu Nov  5 06:05:21 2026 -- 1 IP address (1 host up) scanned in 0.29 seconds', 'stderr': '', 'rc': 0, 'cmd': 'nmap www.psu.ru -p 80 -oG -', 'start': '2026-11-05 06:05:21.326205', 'end': '2026-11-05 06:05:21.674457', 'delta': '0:00:00.348252', 'msg': '', 'invocation': {'module_args': {'_raw_params': 'nmap www.psu.ru -p 80 -oG -', '_uses_shell': True, 'expand_argument_vars': True, 'stdin_add_newline': True, 'strip_empty_ends': True, 'argv': None, 'chdir': None, 'executable': None, 'creates': None, 'removes': None, 'stdin': None}}, 'stdout_lines': ['# Nmap 7.94SVN scan initiated Thu Nov  5 06:05:21 2026 as: nmap -p 80 -oG - www.psu.ru', 'Host: 46.146.231.187 (lemonbro.ru)\tStatus: Up', 'Host: 46.146.231.187 (lemonbro.ru)\tPorts: 80/open/tcp//http///', '# Nmap done at Thu Nov  5 06:05:21 2026 -- 1 IP address (1 host up) scanned in 0.29 seconds'], 'stderr_lines': [], 'failed': False, 'item': 'www.psu.ru', 'ansible_loop_var': 'item'}) => {
+    "msg": [
+        "# Nmap 7.94SVN scan initiated Thu Nov  5 06:05:21 2026 as: nmap -p 80 -oG - www.psu.ru",
+        "Host: 46.146.231.187 (lemonbro.ru)\tStatus: Up",
+        "Host: 46.146.231.187 (lemonbro.ru)\tPorts: 80/open/tcp//http///",
+        "# Nmap done at Thu Nov  5 06:05:21 2026 -- 1 IP address (1 host up) scanned in 0.29 seconds"
+    ]
+}
+ok: [10.0.2.16] => (item={'changed': True, 'stdout': '# Nmap 7.94SVN scan initiated Thu Nov  5 06:05:23 2026 as: nmap -p 80 -oG - fast.com\nHost: 104.102.35.193 (a104-102-35-193.deploy.static.akamaitechnologies.com)\tStatus: Up\nHost: 104.102.35.193 (a104-102-35-193.deploy.static.akamaitechnologies.com)\tPorts: 80/open/tcp//http///\n# Nmap done at Thu Nov  5 06:05:23 2026 -- 1 IP address (1 host up) scanned in 0.43 seconds', 'stderr': '', 'rc': 0, 'cmd': 'nmap fast.com -p 80 -oG -', 'start': '2026-11-05 06:05:23.269310', 'end': '2026-11-05 06:05:23.752684', 'delta': '0:00:00.483374', 'msg': '', 'invocation': {'module_args': {'_raw_params': 'nmap fast.com -p 80 -oG -', '_uses_shell': True, 'expand_argument_vars': True, 'stdin_add_newline': True, 'strip_empty_ends': True, 'argv': None, 'chdir': None, 'executable': None, 'creates': None, 'removes': None, 'stdin': None}}, 'stdout_lines': ['# Nmap 7.94SVN scan initiated Thu Nov  5 06:05:23 2026 as: nmap -p 80 -oG - fast.com', 'Host: 104.102.35.193 (a104-102-35-193.deploy.static.akamaitechnologies.com)\tStatus: Up', 'Host: 104.102.35.193 (a104-102-35-193.deploy.static.akamaitechnologies.com)\tPorts: 80/open/tcp//http///', '# Nmap done at Thu Nov  5 06:05:23 2026 -- 1 IP address (1 host up) scanned in 0.43 seconds'], 'stderr_lines': [], 'failed': False, 'item': 'fast.com', 'ansible_loop_var': 'item'}) => {
+    "msg": [
+        "# Nmap 7.94SVN scan initiated Thu Nov  5 06:05:23 2026 as: nmap -p 80 -oG - fast.com",
+        "Host: 104.102.35.193 (a104-102-35-193.deploy.static.akamaitechnologies.com)\tStatus: Up",
+        "Host: 104.102.35.193 (a104-102-35-193.deploy.static.akamaitechnologies.com)\tPorts: 80/open/tcp//http///",
+        "# Nmap done at Thu Nov  5 06:05:23 2026 -- 1 IP address (1 host up) scanned in 0.43 seconds"
+    ]
+}
+
+PLAY RECAP *******************************************************************************************************************************************************************************************************
+10.0.2.16                  : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
